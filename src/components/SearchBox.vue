@@ -11,7 +11,7 @@ import {store} from '../store'
             movieSearch(){
                 console.log(this.store.searchingText);
                 const url = this.store.api_url_base + this.store.api_url_key + `&query=${this.store.searchingText}`;
-                //this.store.fetchMovie();
+                this.store.fetchMovie(url);
             }
         }
         
