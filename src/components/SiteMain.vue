@@ -12,7 +12,14 @@ import { store } from '../store'
 
 <template>
     <main>
-        <h1>main</h1>
+        <div class="container">
+
+            <h1>{movies.original_title}</h1>
+            <h2>{movies.original_language}</h2>
+            <h3>{movies.vote_average}</h3>
+
+
+        </div>
     </main>
 </template>
 

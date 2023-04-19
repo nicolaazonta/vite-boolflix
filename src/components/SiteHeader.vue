@@ -1,7 +1,9 @@
 <script>
 import { store } from '../store'
+import SearchBox from './SearchBox.vue'
     export default {
         name: 'SiteHeader',
+        components: {SearchBox},
         data(){
             return{
                 store
@@ -11,9 +13,7 @@ import { store } from '../store'
 </script>
 
 <template>
-    <header>
-        <h2>header</h2>
-    </header>
+    <SearchBox/>
 </template>
 
 

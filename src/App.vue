@@ -14,7 +14,11 @@ export default {
     return{
       store
     }
-  } 
+  },
+  mounted(){
+    //store.fetchMovie(`${store.api_url_base}+${store.api_url_key}+${store.searchingText}`)
+    store.fetchMovie(store.api_url_base+store.api_url_key+store.searchingText)
+  }
   
 }
 
