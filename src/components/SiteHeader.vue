@@ -18,5 +18,7 @@ import SearchBox from './SearchBox.vue'
 
 
 <style lang="scss">
-
+    body{
+        background-color: black;
+    }
 </style>
