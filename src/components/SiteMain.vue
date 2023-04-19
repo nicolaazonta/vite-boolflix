@@ -12,12 +12,12 @@ import { store } from '../store'
 
 <template>
     <main>
-        <div class="container" v:for="movie in store.movies">
+        <div class="container" v-for="movie in store.movies">
 
             <h1>{{movie.title}}</h1>
             <h2>{{movie.original_title}}</h2>
-            <h2>{{movies.original_language}}</h2>
-            <h3>{{movies.vote_average}}</h3>
+            <h2>{{movie.original_language}}</h2>
+            <h3>{{movie.vote_average}}</h3>
 
 
         </div>
