@@ -12,7 +12,21 @@ export const store = reactive ({
     api_url_key: '4ae8c0c32bcb2919af3d84230c8ddb6e',
     averageStars(decimal_vote){
         const five_vote = Math.round(decimal_vote / 2)
-        return five_vote;
+        const stars = ''
+        if (five_vote === 1) {
+            stars= '<img src="../assets/img/star-svgrepo-com.png" alt="">'          
+        } else if (five_vote === 2) {
+            
+        } else if (five_vote === 3) {
+            stars= '../assets/img/star-svgrepo-com.png'          
+           
+        } else if (five_vote === 4) {
+            //stars= '../assets/img/star-svgrepo-com.png'          
+            
+        } else if (five_vote === 5) {
+            
+        }
+        return stars;
         //(Math.round(tvShow.vote_average/2)=1)
     },
     fetchMovie(url) {        
