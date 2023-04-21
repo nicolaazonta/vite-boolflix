@@ -12,7 +12,7 @@ import { store } from '../store'
 
 <template>
     <footer>
-        <h2>footer</h2>
+        <!-- <h2>footer</h2> -->
     </footer>
 </template>
 

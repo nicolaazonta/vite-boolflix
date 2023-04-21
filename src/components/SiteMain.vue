@@ -7,29 +7,23 @@ export default {
             store
         }
     },
-    methods: {
-
-    }
 }
 </script>
 
 <template>
     <main>
-        <div class="container">
+        <div class="container w-75">
             <div class="row">
-                <div class="col-3 py-3" v-for="movie in store.movies">
-                    <div id="movie" class="card bg-dark text-light h-100 p-2"><!-- movie -->
+                <div class="col-4 py-3" v-for="movie in store.movies">
+                    <div id="movie" class="card bg-dark text-light h-100 p-2 pos-relative"><!-- movie -->
                         <img class="card-img h-100" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="">
                         <div class="card-img-overlay d-flex flex-column justify-content-end">
                             <h4 class="card-text">{{ movie.title }}</h4>
                             <h6 class="card-text">{{ movie.original_title }}</h6>
-                            <h6 class="card-text">{{ movie.original_language }}</h6>
-                            <h6 class="card-text">{{store.averageStars(movie.vote_average)}}</h6>
-                            <!-- <img src="../assets/img/star-svgrepo-com.png" alt=""> -->
-                            <!-- <h5 class="card-text">{{ movie.vote_average }}</h5> -->
-                            <!-- <span class="px-1">movie</span> -->
+                            <p class="card-text">{{ movie.overview }}</p>
+                            <div  v-html="store.averageStars(movie.vote_average)" class="card-text stars"></div>
                             <img class="lang_flag" :src="`/src/assets/img/${movie.original_language}.png`"
-                                :alt="movie.original_language">
+                            :alt="movie.original_language">
                         </div>
                     </div>
                 </div>
@@ -55,6 +49,18 @@ export default {
 
 <style lang="scss">
 main {
+
+    & .stars{
+        display: flex;
+        flex-wrap: nowrap;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50% , 30%);
+    }
+    & .stars img{
+        width: 2rem;
+    }
 
     & .card-img-overlay {
         display: none!important;

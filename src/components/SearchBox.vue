@@ -24,12 +24,21 @@ export default {
 </script>
 
 <template>
-    <div class="searchBox">
-        <div class="container">
-            <input @keyup="movieSearch(), tvShowSearch(), store.averageStars()" v-model="store.searchingText" type="search" name="" id=""
-                placeholder="type a movie title...." class="bg-dark text-light">
+    <div class="searchBox py-4">
+        <div class="container w-75 d-flex justify-content-between">
+            <div class="input-group input-group-lg w-25">
+                <input placeholder="type a movie title...." type="text" class="form-control bg-dark text-light" aria-describedby="inputGroup-sizing-lg" @keyup="movieSearch(), tvShowSearch(), store.averageStars()" v-model="store.searchingText">
+            </div>
+            <h1 class="text-uppercase">boolflix</h1>
         </div>
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    color: #18ecde;
+}
+</style>
