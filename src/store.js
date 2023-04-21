@@ -10,6 +10,11 @@ export const store = reactive ({
     api_url_base_tvShow: 'https://api.themoviedb.org/3/search/tv?api_key=',
     api_url_base_movie: 'https://api.themoviedb.org/3/search/movie?api_key=',
     api_url_key: '4ae8c0c32bcb2919af3d84230c8ddb6e',
+    averageStars(decimal_vote){
+        const five_vote = Math.round(decimal_vote / 2)
+        return five_vote;
+        //(Math.round(tvShow.vote_average/2)=1)
+    },
     fetchMovie(url) {        
         axios
         .get(url)

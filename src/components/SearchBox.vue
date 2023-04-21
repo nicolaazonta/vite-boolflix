@@ -9,12 +9,12 @@ export default {
     },
     methods: {
         movieSearch() {
-            console.log(this.store.searchingText);
+            //console.log(this.store.searchingText);
             const url = this.store.api_url_base_movie + this.store.api_url_key + `&query=${this.store.searchingText}`;
             this.store.fetchMovie(url);
         },
         tvShowSearch() {
-            console.log(this.store.searchingText);
+            //console.log(this.store.searchingText);
             const url = this.store.api_url_base_tvShow + this.store.api_url_key + `&query=${this.store.searchingText}`;
             this.store.fetchTvShow(url);
         }
@@ -26,9 +26,8 @@ export default {
 <template>
     <div class="searchBox">
         <div class="container">
-            <input @keyup="movieSearch(), tvShowSearch()" v-model="store.searchingText" type="search" name="" id=""
+            <input @keyup="movieSearch(), tvShowSearch(), store.averageStars()" v-model="store.searchingText" type="search" name="" id=""
                 placeholder="type a movie title...." class="bg-dark text-light">
-            <button @click="movieSearch(), tvShowSearch()" class="btn bg-dark text-light">search</button>
         </div>
     </div>
 </template>

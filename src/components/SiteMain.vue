@@ -24,7 +24,8 @@ export default {
                             <h3 class="card-text">{{ movie.title }}</h3>
                             <h5 class="card-text">{{ movie.original_title }}</h5>
                             <h5 class="card-text">{{ movie.original_language }}</h5>
-                            <h5 class="card-text">{{ movie.vote_average }}</h5>
+                            <h5 class="card-text">{{store.averageStars(movie.vote_average)}}</h5>
+                            <!-- <h5 class="card-text">{{ movie.vote_average }}</h5> -->
                             <span class="px-1">movie</span>
                             <img class="lang_flag" :src="`/src/assets/img/${movie.original_language}.png`"
                                 :alt="movie.original_language">
@@ -38,7 +39,7 @@ export default {
                             <h3 class="card-text">{{ tvShow.name }}</h3>
                             <h5 class="card-text">{{ tvShow.original_name }}</h5>
                             <h5 class="card-text">{{ tvShow.original_language }}</h5>
-                            <h5 class="card-text">{{ tvShow.vote_average }}</h5>
+                            <h5 class="card-text">{{store.averageStars(tvShow.vote_average)}}</h5>
                             <span class="px-1">tv show</span>
                             <img class="lang_flag" :src="`/src/assets/img/${tvShow.original_language}.png`"
                                 :alt="tvShow.original_language">

@@ -19,7 +19,7 @@ export default {
     //store.fetchMovie(`${store.api_url_base}+${store.api_url_key}+${store.searchingText}`)
     store.fetchMovie(store.api_url_base_movie+store.api_url_key+store.searchingText);
     store.fetchTvShow(store.api_url_base_tvShow+store.api_url_key+store.searchingText);
-
+    store.averageStars();
   }
   
 }
