@@ -14,33 +14,36 @@ export default {
     <main>
         <div class="container w-75">
             <div class="row">
-                <div class="col-4 py-3" v-for="movie in store.movies">
+                <div class="col-md-4 col-sm-6 py-3" v-for="movie in store.movies">
                     <div id="movie" class="card bg-dark text-light h-100 p-2 pos-relative"><!-- movie -->
-                        <img class="card-img h-100" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="">
+                        <img class="card-img h-100" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="poster of movie">
                         <div class="card-img-overlay d-flex flex-column justify-content-end">
+                            <div  v-html="store.averageStars(movie.vote_average)" class="card-text stars"></div>
                             <h4 class="card-text">{{ movie.title }}</h4>
                             <h6 class="card-text">{{ movie.original_title }}</h6>
-                            <p class="card-text">{{ movie.overview }}</p>
-                            <div  v-html="store.averageStars(movie.vote_average)" class="card-text stars"></div>
+                            <h6 class="text-uppercase">movie</h6>
+                            <p class="card-text d-sm-none d-md-block">{{ movie.overview.slice(0, 200) }}...</p>
                             <img class="lang_flag" :src="`/src/assets/img/${movie.original_language}.png`"
                             :alt="movie.original_language">
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-3 py-3" v-for="tvShow in store.tvShows">
-                    <div id="tvshow" class="card bg-dark text-light h-100 p-2">
-                        <img class="card-img h-100" :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="">
+
+                <div class="col-4 py-3" v-for="tvShow in store.tvShows">
+                    <div id="tvshow" class="card bg-dark text-light h-100 p-2 pos-relative">
+                        <img class="card-img h-100" :src="`https://image.tmdb.org/t/p/w342/${tvShow.poster_path}`" alt="poster of tv show">
                         <div class="card-img-overlay d-flex flex-column justify-content-end">
-                            <h5 class="card-text">{{ tvShow.name }}</h5>
-                            <p class="card-text">{{ tvShow.original_name }}</p>
-                            <p class="card-text">{{ tvShow.original_language }}</p>
-                            <p class="card-text">{{store.averageStars(tvShow.vote_average)}}</p>
-                            <span class="px-1">tv show</span>
+                            <div  v-html="store.averageStars(tvShow.vote_average)" class="card-text stars"></div>
+                            <h4 class="card-text">{{ tvShow.name }}</h4>
+                            <h6 class="card-text">{{ tvShow.original_name }}</h6>
+                            <h6 class="text-uppercase">tv show</h6>
+                            <p class="card-text d-sm-none d-md-block">{{ tvShow.overview.slice(0, 200) }}...</p>
                             <img class="lang_flag" :src="`/src/assets/img/${tvShow.original_language}.png`"
-                                :alt="tvShow.original_language">
+                            :alt="tvShow.original_language">
                         </div>
                     </div>
-                </div> -->
+                </div>
+
             </div>
         </div>
     </main>
@@ -55,8 +58,8 @@ main {
         flex-wrap: nowrap;
         position: absolute;
         left: 50%;
-        top: 0;
-        transform: translate(-50% , 30%);
+        top: 1rem;
+        transform: translate(-50% , 0);
     }
     & .stars img{
         width: 2rem;
@@ -78,6 +81,7 @@ main {
     & .lang_flag {
         aspect-ratio: 1;
         width: 2rem;
+        align-self: center;
     }
 }
 </style>
